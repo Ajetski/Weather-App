@@ -60,9 +60,9 @@ app.get('/help', (req, res) => {
 
 app.get('/weather', (req, res) => {
     if (!req.query.location) {
-        return res.send({
+        return res.send(
             'Error'
-        })
+        )
     }
 
     geocode(req.query.location, (gecodeErr, locationData) => {
