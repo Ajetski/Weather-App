@@ -5,12 +5,12 @@ const express = require('express')
 const app = express()
 const hbs = require('express-handlebars')
 
-const geocode = require('./utils/geocode.js')
-const forecast = require('./utils/forecast.js')
+const geocode = require('./src/utils/geocode.js')
+const forecast = require('./src/utils/forecast.js')
 
 // Define paths for Express config-
-const publicDirectoryPath = path.join(__dirname, '../public')
-const viewsDirectoryPath = path.join(__dirname, '../views')
+const publicDirectoryPath = path.join(__dirname, './public')
+const viewsDirectoryPath = path.join(__dirname, './views')
 
 // Setup handlebars engine
 //app.engine('handlebars', hbs());
@@ -88,6 +88,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server is listening on port 3000...')
+app.listen(process.env.PORT || 3000, () => {
+    console.log('Server is listening on port ' + String(process.env.PORT || 3000) + '...')
 })
