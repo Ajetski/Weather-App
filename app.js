@@ -5,8 +5,8 @@ const express = require('express')
 const app = express()
 const hbs = require('express-handlebars')
 
-const geocode = require('./src/utils/geocode.js')
-const forecast = require('./src/utils/forecast.js')
+const geocode = require('./utils/geocode.js')
+const forecast = require('./utils/forecast.js')
 
 // Define paths for Express config-
 const publicDirectoryPath = path.join(__dirname, './public')
